@@ -3,10 +3,16 @@ import 'dart:io';
 
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
-import 'package:sih_women_safety_app/logerror.dart';
+import 'package:flutter/services.dart';
 
 import './home.dart';
+import './story_screen.dart';
+import './IncidentScreen.dart';
+import './fileIncidentReport.dart';
+import './logerror.dart';
+import './morestories.dart';
 import './strings.dart' as string;
+import './routing_assets.dart' as routesAssets;
 
 List<CameraDescription> cameras = [];
 
@@ -17,7 +23,9 @@ Future<void> main() async {
   } on CameraException catch (e) {
     logError(e.code, e.description);
   }
-  runApp(MyApp());
+  SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.bottom]).then((_) {
+    runApp(MyApp());
+  });
 }
 
 class MyApp extends StatelessWidget {
@@ -34,6 +42,12 @@ class MyApp extends StatelessWidget {
         title: string.title,
         cameras: cameras,
       ),
+      routes:  {
+        routesAssets.storyScreen : (context) => StroyScreen(),
+        routesAssets.incidentScreen : (context) => IncidentScreen(),
+        routesAssets.MoreStoriesScreen : (context) => MoreStories(),
+        routesAssets.fileIncidentScreen : (context) => FileIncidentReport(),
+      },
     );
   }
 }
