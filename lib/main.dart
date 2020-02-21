@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'dart:io';
+// import 'dart:io';
 
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
@@ -11,6 +11,7 @@ import './IncidentScreen.dart';
 import './fileIncidentReport.dart';
 import './logerror.dart';
 import './morestories.dart';
+import './gallery.dart';
 import './strings.dart' as string;
 import './routing_assets.dart' as routesAssets;
 
@@ -43,10 +44,11 @@ class MyApp extends StatelessWidget {
         cameras: cameras,
       ),
       routes:  {
-        routesAssets.storyScreen : (context) => StroyScreen(),
+        routesAssets.storyScreen : (context) => StoryScreen(),
         routesAssets.incidentScreen : (context) => IncidentScreen(),
         routesAssets.MoreStoriesScreen : (context) => MoreStories(),
         routesAssets.fileIncidentScreen : (context) => FileIncidentReport(),
+        routesAssets.Gallery : (context) => Gallery(),
       },
     );
   }

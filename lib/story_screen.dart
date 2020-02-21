@@ -3,7 +3,7 @@ import 'package:story_view/story_view.dart';
 
 import './routing_assets.dart' as routeAsset;
 
-class StroyScreen extends StatelessWidget {
+class StoryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(

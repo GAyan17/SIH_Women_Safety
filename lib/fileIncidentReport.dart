@@ -1,7 +1,7 @@
 import 'package:datetime_picker_formfield/datetime_picker_formfield.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:path/path.dart';
+// import 'package:path/path.dart';
 
 class FileIncidentReport extends StatefulWidget {
   @override
@@ -76,6 +76,7 @@ class _FileIncidentReportState extends State<FileIncidentReport> {
               if (value.isEmpty) {
                 return 'Please enter place';
               }
+              return '';
             },
             onSaved: (value) {
               setState(() {
@@ -90,6 +91,7 @@ class _FileIncidentReportState extends State<FileIncidentReport> {
               if (value.isEmpty || value.length < 100) {
                 return 'Please report in detail';
               }
+              return '';
             },
             onSaved: (value) {
               setState(() {
