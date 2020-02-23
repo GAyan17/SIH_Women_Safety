@@ -637,45 +637,66 @@ class _HomeState extends State<Home>
       key: _scaffoldKey,
       extendBody: true,
       extendBodyBehindAppBar: true,
-      body: GestureDetector(
-        onDoubleTap: () {
-          setState(() {
-            onCameraSwitch();
-          });
-        },
-        onPanUpdate: (details) {
-          if (details.delta.dx < 0 && details.delta.dy == 0) {
-            Navigator.of(context).pushNamed(routeAssets.storyScreen);
-          }
-          if (details.delta.dx > 0 && details.delta.dy == 0) {
-            Navigator.of(context).pushNamed(routeAssets.incidentScreen);
-          }
-        },
-        child: Stack(
-          children: <Widget>[
-            _cameraPreviewWidget(),
-            Positioned(
-              top: 24.0,
-              right: 12.0,
-              child: IconButton(
-                icon: Icon(Icons.switch_camera),
-                color: Colors.white,
-                onPressed: () {
+      body: Stack(
+        children: <Widget>[
+          GestureDetector(
+              onDoubleTap: () {
+                setState(() {
                   onCameraSwitch();
-                },
+                });
+              },
+              onPanUpdate: (details) {
+                if (details.delta.dx < 0 && details.delta.dy == 0) {
+                  Navigator.of(context).pushNamed(routeAssets.storyScreen);
+                }
+                if (details.delta.dx > 0 && details.delta.dy == 0) {
+                  Navigator.of(context).pushNamed(routeAssets.incidentScreen);
+                }
+              },
+              child: _cameraPreviewWidget()),
+          Positioned(
+            top: 24.0,
+            right: 12.0,
+            child: IconButton(
+              icon: Icon(Icons.switch_camera),
+              color: Colors.white,
+              onPressed: () {
+                onCameraSwitch();
+              },
+            ),
+          ),
+          Positioned(
+            bottom: 24.0,
+            left: 12.0,
+            child: IconButton(
+              icon: Icon(Icons.chat_bubble),
+              color: Colors.white,
+              onPressed: () {
+                Navigator.of(context).pushNamed(routeAssets.incidentScreen);
+              },
+            ),
+          ),
+          Positioned(
+            bottom: 24.0,
+            right: 12.0,
+            child: IconButton(
+              icon: Icon(Icons.menu),
+              color: Colors.white,
+              onPressed: () {
+                Navigator.of(context).pushNamed(routeAssets.storyScreen);
+              },
+            ),
+          ),
+          if (isRecordingMode)
+            Positioned(
+              left: 0,
+              right: 0,
+              top: 32.0,
+              child: VideoTimer(
+                key: _timerKey,
               ),
             ),
-            if (isRecordingMode)
-                Positioned(
-                  left: 0,
-                  right: 0,
-                  top: 32.0,
-                  child: VideoTimer(
-                    key: _timerKey,
-                  ),
-                ),
-          ],
-        ),
+        ],
       ),
       bottomNavigationBar: buildBottomNavigationBar(),
     );
