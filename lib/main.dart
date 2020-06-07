@@ -30,7 +30,7 @@ Future<void> main() async {
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -43,12 +43,12 @@ class MyApp extends StatelessWidget {
         title: string.title,
         cameras: cameras,
       ),
-      routes:  {
-        routesAssets.storyScreen : (context) => StoryScreen(),
-        routesAssets.incidentScreen : (context) => IncidentScreen(),
-        routesAssets.MoreStoriesScreen : (context) => MoreStories(),
-        routesAssets.fileIncidentScreen : (context) => FileIncidentReport(),
-        routesAssets.Gallery : (context) => Gallery(),
+      routes: {
+        routesAssets.storyScreen: (context) => StoryScreen(),
+        routesAssets.incidentScreen: (context) => IncidentScreen(),
+        routesAssets.MoreStoriesScreen: (context) => MoreStories(),
+        routesAssets.fileIncidentScreen: (context) => FileIncidentReport(),
+        routesAssets.Gallery: (context) => Gallery(),
       },
     );
   }

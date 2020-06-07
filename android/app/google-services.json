@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "341344832168",
+    "firebase_url": "https://imageupload-f32e1.firebaseio.com",
+    "project_id": "imageupload-f32e1",
+    "storage_bucket": "imageupload-f32e1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:341344832168:android:9369e5577d63bbfba0509d",
+        "android_client_info": {
+          "package_name": "com.hackzero.sih_women_safety_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "341344832168-u847k61qm973udsta0i12g3c835pk3hg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDB5Fys3hjvUvAxnPN6b1oxtlPXCBdCuyI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "341344832168-u847k61qm973udsta0i12g3c835pk3hg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
